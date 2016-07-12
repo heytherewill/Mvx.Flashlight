@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashlight", "Flashlight\Flashlight.csproj", "{78168D1D-53F2-4E14-BC89-826EE8E43D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashlight.Droid", "Flashlight.Droid\Flashlight.Droid.csproj", "{F6DF9277-0DC6-4B77-9D21-B6BB2D8574AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashlight.iOS", "Flashlight.iOS\Flashlight.iOS.csproj", "{35CA1B3B-C84A-464B-B112-BA2BB99FD6A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78168D1D-53F2-4E14-BC89-826EE8E43D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78168D1D-53F2-4E14-BC89-826EE8E43D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78168D1D-53F2-4E14-BC89-826EE8E43D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78168D1D-53F2-4E14-BC89-826EE8E43D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6DF9277-0DC6-4B77-9D21-B6BB2D8574AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6DF9277-0DC6-4B77-9D21-B6BB2D8574AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6DF9277-0DC6-4B77-9D21-B6BB2D8574AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6DF9277-0DC6-4B77-9D21-B6BB2D8574AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CA1B3B-C84A-464B-B112-BA2BB99FD6A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CA1B3B-C84A-464B-B112-BA2BB99FD6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CA1B3B-C84A-464B-B112-BA2BB99FD6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CA1B3B-C84A-464B-B112-BA2BB99FD6A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
