@@ -54,7 +54,6 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FlashlightService.cs" />
     <Compile Include="Plugin.cs" />

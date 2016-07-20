@@ -7,9 +7,11 @@ using MvvmCross.Platform.Droid.Platform;
 using MvvmCross.Platform.Platform;
 using Android.App;
 
+#pragma warning disable XA0001 // Find issues with Android API usage
+#pragma warning disable CS0618 // Type or member is obsolete
 namespace Flashlight.Droid
 {
-	public class FlashlightService : IFlashlightService
+	public class FlashlightService : BaseFlashlightService
 	{
 		internal static void Initialize()
 			=> Mvx.RegisterSingleton<IFlashlightService>(new FlashlightService());
@@ -20,17 +22,11 @@ namespace Flashlight.Droid
 
 		private Activity Activity => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
 
-		public bool DeviceHasFlashlight
+		protected override bool NativeDeviceHasFlashlight
 			=> Activity.PackageManager.HasSystemFeature(PackageManager.FeatureCameraFlash);
 
-		public bool IsFlashlightOn { get; set; }
-
-		public bool EnsureFlashlightOn()
+		protected override bool NativeEnsureFlashlightOn()
 		{
-			if (IsFlashlightOn) return true;
-
-			if (!DeviceHasFlashlight) return false;
-
 			try
 			{
 				_camera = Camera.Open();
@@ -41,7 +37,6 @@ namespace Flashlight.Droid
 				_camera.SetParameters(parameters);
 				_camera.StartPreview();
 
-				IsFlashlightOn = true;
 				return true;
 			}
 			catch (Exception ex)
@@ -51,10 +46,8 @@ namespace Flashlight.Droid
 			}
 		}
 
-		public bool EnsureFlashlightOff()
+		protected override bool NativeEnsureFlashlightOff()
 		{
-			if (!IsFlashlightOn) return true;
-
 			try
 			{
 				var parameters = _camera.GetParameters();
@@ -63,8 +56,6 @@ namespace Flashlight.Droid
 				_camera.StopPreview();
 				_camera.Release();
 				_camera = null;
-
-				IsFlashlightOn = false;
 
 				return true;
 			}
@@ -76,3 +67,5 @@ namespace Flashlight.Droid
 		}
 	}
 }
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore XA0001 // Find issues with Android API usage

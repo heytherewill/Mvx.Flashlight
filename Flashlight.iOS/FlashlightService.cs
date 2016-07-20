@@ -4,7 +4,7 @@ using MvvmCross.Platform;
 
 namespace Flashlight.iOS
 {
-	public class FlashlightService : IFlashlightService
+	public class FlashlightService : BaseFlashlightService
 	{
 		private AVCaptureDevice _flashlight = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video);
 
@@ -13,26 +13,14 @@ namespace Flashlight.iOS
 
 		private FlashlightService() { }
 
-		public bool DeviceHasFlashlight 
+		protected override bool NativeDeviceHasFlashlight 
 			=> _flashlight.HasTorch && _flashlight.TorchAvailable && _flashlight.IsTorchModeSupported(AVCaptureTorchMode.On);
 
-		public bool IsFlashlightOn { get; set; }
-
-		public bool EnsureFlashlightOn()
-		{
-			if (IsFlashlightOn) return true;
-
-			if (!DeviceHasFlashlight) return false;
-
-			return SafeSetTorchMode(AVCaptureTorchMode.On);
-		}
-
-		public bool EnsureFlashlightOff()
-		{
-			if (!IsFlashlightOn) return true;
-
-			return SafeSetTorchMode(AVCaptureTorchMode.Off);
-		}
+		protected override bool NativeEnsureFlashlightOn()
+			=> SafeSetTorchMode(AVCaptureTorchMode.On);
+	
+		protected override bool NativeEnsureFlashlightOff()
+			=> SafeSetTorchMode(AVCaptureTorchMode.Off);
 
 		private bool SafeSetTorchMode(AVCaptureTorchMode captureTorchMode)
 		{
