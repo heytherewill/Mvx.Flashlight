@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="MvvmCross.Platform.Droid">
-      <HintPath>..\packages\MvvmCross.Platform.4.2.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="MvvmCross.Platform">
-      <HintPath>..\packages\MvvmCross.Platform.4.2.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Droid">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -53,13 +53,13 @@
     <Compile Include="Plugin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Flashlight\Flashlight.csproj">
       <Project>{78168D1D-53F2-4E14-BC89-826EE8E43D19}</Project>
       <Name>Flashlight</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
