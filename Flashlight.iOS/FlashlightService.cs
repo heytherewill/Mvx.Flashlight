@@ -6,7 +6,7 @@ namespace Flashlight.iOS
 {
 	public class FlashlightService : BaseFlashlightService
 	{
-		private AVCaptureDevice _flashlight = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video);
+		private readonly AVCaptureDevice _flashlight = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video);
 
 		internal static void Initialize()
 			=> Mvx.RegisterSingleton<IFlashlightService>(new FlashlightService());
