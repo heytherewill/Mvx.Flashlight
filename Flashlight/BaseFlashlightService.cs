@@ -1,44 +1,37 @@
 ﻿namespace Flashlight
 {
-	public abstract class BaseFlashlightService : IFlashlightService
-	{
-		public bool IsFlashlightOn { get; set; }
+    public abstract class BaseFlashlightService : IFlashlightService
+    {
+        public bool IsFlashlightOn { get; set; }
 
-		public virtual bool DeviceHasFlashlight => NativeDeviceHasFlashlight;
+        public virtual bool DeviceHasFlashlight => NativeDeviceHasFlashlight;
 
-		public bool EnsureFlashlightOn()
-		{
-			if (!DeviceHasFlashlight) return false;
+        public bool EnsureFlashlightOn()
+        {
+            if (!DeviceHasFlashlight) return false;
 
-			if (IsFlashlightOn) return true;
+            if (IsFlashlightOn) return true;
 
-			var result = NativeEnsureFlashlightOn();
-		
-			if (result)
-			{
-				IsFlashlightOn = !IsFlashlightOn;	
-			}
+            var result = NativeEnsureFlashlightOn();
+            IsFlashlightOn = result;	
 
-			return result;
-		}
+            return result;
+        }
 
-		public bool EnsureFlashlightOff()
-		{
-			if (!IsFlashlightOn) return true;
+        public bool EnsureFlashlightOff()
+        {
+            if (!IsFlashlightOn) return true;
 
-			var result = NativeEnsureFlashlightOff();
-			if (result)
-			{
-				IsFlashlightOn = !IsFlashlightOn;
-			}
+            var result = NativeEnsureFlashlightOff();
+            IsFlashlightOn = !result;
 
-			return result;
-		}
+            return result;
+        }
 
-		protected abstract bool NativeDeviceHasFlashlight { get; }
+        protected abstract bool NativeDeviceHasFlashlight { get; }
 
-		protected abstract bool NativeEnsureFlashlightOn();
+        protected abstract bool NativeEnsureFlashlightOn();
 
-		protected abstract bool NativeEnsureFlashlightOff();
-	}
+        protected abstract bool NativeEnsureFlashlightOff();
+    }
 }

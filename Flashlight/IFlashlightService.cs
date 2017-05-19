@@ -1,13 +1,13 @@
 ﻿namespace Flashlight
 {
-	public interface IFlashlightService
-	{
-		bool DeviceHasFlashlight { get; }
+    public interface IFlashlightService
+    {
+        bool DeviceHasFlashlight { get; }
 
-		bool IsFlashlightOn { get; }
+        bool IsFlashlightOn { get; }
 
-		bool EnsureFlashlightOn();
+        bool EnsureFlashlightOn();
 
-		bool EnsureFlashlightOff();
-	}
+        bool EnsureFlashlightOff();
+    }
 }
