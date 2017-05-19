@@ -4,34 +4,33 @@ using MvvmCross.Platform;
 
 namespace Flashlight.iOS
 {
-	public class FlashlightService : BaseFlashlightService
-	{
-		private readonly AVCaptureDevice _flashlight = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video);
+    public class FlashlightService : BaseFlashlightService
+    {
+        private readonly AVCaptureDevice _flashlight = AVCaptureDevice.GetDefaultDevice(AVMediaType.Video);
 
-		internal static void Initialize()
-			=> Mvx.RegisterSingleton<IFlashlightService>(new FlashlightService());
+        internal static void Initialize()
+            => Mvx.RegisterSingleton<IFlashlightService>(new FlashlightService());
 
-		private FlashlightService() { }
+        private FlashlightService() { }
 
-		protected override bool NativeDeviceHasFlashlight 
-			=> _flashlight.HasTorch && _flashlight.TorchAvailable && _flashlight.IsTorchModeSupported(AVCaptureTorchMode.On);
+        protected override bool NativeDeviceHasFlashlight 
+            => _flashlight.HasTorch && _flashlight.TorchAvailable && _flashlight.IsTorchModeSupported(AVCaptureTorchMode.On);
 
-		protected override bool NativeEnsureFlashlightOn()
-			=> SafeSetTorchMode(AVCaptureTorchMode.On);
-	
-		protected override bool NativeEnsureFlashlightOff()
-			=> SafeSetTorchMode(AVCaptureTorchMode.Off);
+        protected override bool NativeEnsureFlashlightOn()
+            => SafeSetTorchMode(AVCaptureTorchMode.On);
 
-		private bool SafeSetTorchMode(AVCaptureTorchMode captureTorchMode)
-		{
-			NSError err = null;
-			var success = _flashlight.LockForConfiguration(out err);
-			if (!success) return false;
+        protected override bool NativeEnsureFlashlightOff()
+            => SafeSetTorchMode(AVCaptureTorchMode.Off);
 
-			_flashlight.TorchMode = captureTorchMode;
-			_flashlight.UnlockForConfiguration();
+        private bool SafeSetTorchMode(AVCaptureTorchMode captureTorchMode)
+        {
+            var success = _flashlight.LockForConfiguration(out NSError err);
+            if (!success) return false;
 
-			return true;
-		}
-	}
+            _flashlight.TorchMode = captureTorchMode;
+            _flashlight.UnlockForConfiguration();
+
+            return true;
+        }
+    }
 }
