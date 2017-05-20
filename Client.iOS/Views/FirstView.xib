@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstView">
+            <connections>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet property="On" destination="dbI-W3-aTV" id="name-outlet-dbI-W3-aTV"/>
+                <outlet property="Off" destination="iQe-3q-q0o" id="name-outlet-iQe-3q-q0o"/>
+                <outlet property="Toggle" destination="m0j-7d-Wrr" id="name-outlet-m0j-7d-Wrr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQe-3q-q0o" misplaced="YES">
+                    <rect key="frame" x="30" y="319" width="315" height="30"/>
+                    <state key="normal" title="Turn flashlight off"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0j-7d-Wrr" misplaced="YES">
+                    <rect key="frame" x="30" y="369" width="315" height="30"/>
+                    <state key="normal" title="Toggle flashlight"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-W3-aTV" misplaced="YES">
+                    <rect key="frame" x="30" y="268" width="315" height="30"/>
+                    <state key="normal" title="Turn flashlight on"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dbI-W3-aTV" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="30" id="4o7-Oj-mwc"/>
+                <constraint firstItem="iQe-3q-q0o" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="O4H-0F-Qmb"/>
+                <constraint firstItem="m0j-7d-Wrr" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="30" id="QmC-eK-whj"/>
+                <constraint firstItem="iQe-3q-q0o" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="30" id="RPu-kD-TlK"/>
+                <constraint firstItem="iQe-3q-q0o" firstAttribute="top" secondItem="dbI-W3-aTV" secondAttribute="bottom" constant="20" id="SMF-Wc-zqr"/>
+                <constraint firstItem="m0j-7d-Wrr" firstAttribute="top" secondItem="iQe-3q-q0o" secondAttribute="bottom" constant="20" id="bie-Hq-KnB"/>
+                <constraint firstAttribute="trailing" secondItem="dbI-W3-aTV" secondAttribute="trailing" constant="30" id="nmn-9b-zYs"/>
+                <constraint firstAttribute="trailing" secondItem="iQe-3q-q0o" secondAttribute="trailing" constant="30" id="oPr-Bw-bkR"/>
+                <constraint firstAttribute="trailing" secondItem="m0j-7d-Wrr" secondAttribute="trailing" constant="30" id="okG-B0-jdN"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
