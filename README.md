@@ -1,4 +1,4 @@
-# Mvx.Flashlight
+# Mvx.Flashlight [![Build Status](https://www.bitrise.io/app/7d7c5d481be083cf/status.svg?token=NQFc0gqIxZGc20c9OqAIEA&branch=master)](https://www.bitrise.io/app/7d7c5d481be083cf)
 :flashlight: MvvmCross Flashlight Plugin
 
 This plugin allows you to use the device's flash in any [MvvmCross](https://github.com/MvvmCross/MvvmCross) project.
