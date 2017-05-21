@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        local:MvxBind="Click TurnFlashlightOnCommand"
+        android:text="Turn flashlight on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click TurnFlashlightOffCommand"
+        android:text="Turn flashlight off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click ToggleFlashlightCommand"
+        android:text="Toggle flashlight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

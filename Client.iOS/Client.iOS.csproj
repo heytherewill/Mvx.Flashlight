@@ -136,10 +136,6 @@
     <Compile Include="Bootstrap\FlashlightPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client.Core\Client.Core.csproj">
-      <Project>{8A18582F-1C28-4E5B-88C4-03A7A0F4C978}</Project>
-      <Name>Client.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Flashlight\Flashlight.csproj">
       <Project>{78168D1D-53F2-4E14-BC89-826EE8E43D19}</Project>
       <Name>Flashlight</Name>
@@ -147,6 +143,10 @@
     <ProjectReference Include="..\Flashlight.iOS\Flashlight.iOS.csproj">
       <Project>{35CA1B3B-C84A-464B-B112-BA2BB99FD6A6}</Project>
       <Name>Flashlight.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.Core\Client.Core.csproj">
+      <Project>{8A18582F-1C28-4E5B-88C4-03A7A0F4C978}</Project>
+      <Name>Client.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
