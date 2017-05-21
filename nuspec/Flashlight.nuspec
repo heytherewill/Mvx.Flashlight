@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Mvx.Flashlight</id>
+        <version>1.0.0</version>
+        <authors>William Barbosa</authors>
+        <projectUrl>https://github.com/willsb/Mvx.Flashlight</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/willsb/Mvx.Flashlight/master/nuspec/Icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description> MvvmCross plugin to access the device's flash/torch</description>
+        <copyright />
+        <language />
+        <tags>mvvm mvvmcross xamarin monodroid mvx flashlight torch flash</tags>
+        <dependencies>
+            <dependency id="MvvmCross.Platform" version="4.4.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="../build/content/*.*" target="lib" />
+        <file src="../build/lib/*.*" target="lib" />
+    </files>
+</package>
